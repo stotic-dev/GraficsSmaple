@@ -56,26 +56,6 @@ using namespace metal;
     return half4(finalColor, 1.0h) * color;
 }
 
-[[ stitchable ]] half4 hologramMotionColor
-(
- float2 position,
- half4 color,
- float2 size,
- float2 acceleration,
- float time
- ) {
-    // ピクセルの位置を、中心を0, 0として-1から1に正規化する
-    float2 r = (position / size) * 2.0 - 1.0;
-    r.y = -r.y;
-    
-    float angle = r.x / r.y * sin(time);
-    half3 gradientColor = half3(r.x * sin(time), r.x / r.y, r.y);
-    half3 base = half3(r.y * acceleration.y * -1 + r.x * acceleration.x * -1) * color.rgb;
-    half3 finalColor = mix(color.rgb, gradientColor, 0.7);
-//    return half4(finalColor, color.a);;
-    return half4(gradientColor, color.a);
-}
-
 // HSV -> RGB変換関数
 half3 hsv2rgb(float3 c) {
     float4 K = float4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
@@ -116,7 +96,6 @@ half4 hueRotationShader(
     half4 color,
     float offset
 ) {
-//    float hue = fmod(offset + position.x * 0.008 + position.y * 0.008, 1.0); // 0〜1
     float hue = fmod(offset + position.x * 0.008 + position.y * 0.008, 1.0); // 0〜1
     float saturation = 1.0;
     float value = 1.0;

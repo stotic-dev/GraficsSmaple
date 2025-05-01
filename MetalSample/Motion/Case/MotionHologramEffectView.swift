@@ -57,19 +57,12 @@ struct MotionHologramEffectView: View {
                 .visualEffect { effect, proxy in
                     effect
                         .colorEffect(
-                            ShaderLibrary.hueGradientShader(
+                            ShaderLibrary.hologramMotionColor(
                                 .float2(proxy.size),
                                 .float(espelodeTime),
                                 .float2(x, y)
                             )
                         )
-//                        .colorEffect(
-//                            ShaderLibrary.hologramMotionColor(
-//                                .float2(proxy.size),
-//                                .float2(x, y),
-//                                .float(espelodeTime)
-//                            )
-//                        )
                 }
         }
     }
