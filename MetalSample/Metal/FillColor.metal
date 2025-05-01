@@ -65,7 +65,7 @@ half3 hsv2rgb(float3 c) {
 
 // メイン Color Shader
 [[ stitchable ]]
-half4 hueGradientShader(
+half4 hologramMotionColor(
     float2 position,
     half4 color,
     float2 size,
