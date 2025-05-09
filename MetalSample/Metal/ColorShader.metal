@@ -41,9 +41,8 @@ using namespace metal;
 
 // HSV -> RGB変換関数
 half3 hsv2rgb(float3 c) {
-    float4 K = float4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
-    float3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
-    return half3(c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y));
+    float3 p = abs(fract(c.xxx + float3(0.0, 2.0 / 3.0, 1.0 / 3.0)) * 6.0 - 3.0);
+    return half3(c.z * mix(1.0, clamp(p - 1.0, 0.0, 1.0), c.y));
 }
 
 // メイン Color Shader
@@ -79,7 +78,7 @@ half4 hueRotationShader(
     half4 color,
     float offset
 ) {
-    float hue = fmod(offset + position.x * 0.008 + position.y * 0.008, 1.0); // 0〜1
+    float hue = fmod(offset * 5 + position.x * 0.001 + position.y * 0.008, 1.0); // 0〜1
     float saturation = 1.0;
     float value = 1.0;
 
