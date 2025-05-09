@@ -9,23 +9,6 @@
 #include <SwiftUI/SwiftUI_Metal.h>
 using namespace metal;
 
-[[ stitchable ]] half4 fillColor
-(
- float2 position, // 現在のピクセルの位置(デフォルトで与えられる)
- half4 color,
- half4 fillColor
- ) {
-    return fillColor;
-}
-
-[[ stitchable ]] half4 fillRed
-(
- float2 position, // 現在のピクセルの位置(デフォルトで与えられる)
- half4 color
- ) {
-    return half4(1.0, 0.0, 0.0, 1.0);
-}
-
 [[ stitchable ]] half4 fillGradientColor
 (
  float2 position, // 現在のピクセルの位置(デフォルトで与えられる)
