@@ -1,0 +1,80 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Hello World!!!!!" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello World!!!!!"
+          }
+        }
+      }
+    },
+    "Motion" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Motion"
+          }
+        }
+      }
+    },
+    "motion_sample_title" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Motion"
+          }
+        }
+      }
+    },
+    "offset: %lf" : {
+
+    },
+    "other_sample_title" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Other"
+          }
+        }
+      }
+    },
+    "Root" : {
+
+    },
+    "text_sample_title" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Text"
+          }
+        }
+      }
+    },
+    "TextRenderer" : {
+
+    },
+    "x: %lf" : {
+
+    },
+    "y: %lf" : {
+
+    },
+    "ホログラムエフェクト" : {
+
+    },
+    "レアカードエフェクト" : {
+
+    }
+  },
+  "version" : "1.0"
+}
