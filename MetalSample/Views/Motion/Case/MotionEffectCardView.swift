@@ -22,19 +22,19 @@ struct MotionEffectCardView: View {
             Text("y: \(y)")
             let x = x
             let y = y
-            Image(.imageIcon)
+            Image(.teaIcon)
                 .resizable()
                 .frame(width: 300, height: 300)
                 .aspectRatio(contentMode: .fill)
                 .visualEffect { effect, proxy in
                     effect.colorEffect(
-                        ShaderLibrary.brightnessMotionColor(
+                        ShaderLibrary.rareCard(
                             .float2(proxy.size.width, proxy.size.height),
                             .float2(x, y)
                         )
                     )
                 }
-                .colorEffect(ShaderLibrary.default.brightnessMotionColor(
+                .colorEffect(ShaderLibrary.brightnessMotionColor(
                     .boundingRect,
                     .float2(x, y)
                 ))

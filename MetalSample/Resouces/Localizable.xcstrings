@@ -1,6 +1,17 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "gradient_title" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "グラデーション"
+          }
+        }
+      }
+    },
     "Hello World!!!!!" : {
       "localizations" : {
         "ja" : {
@@ -11,7 +22,19 @@
         }
       }
     },
+    "hue_rotation_title" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "色相回転"
+          }
+        }
+      }
+    },
     "Motion" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -46,8 +69,30 @@
         }
       }
     },
+    "rare_card_title" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "レアカード"
+          }
+        }
+      }
+    },
     "Root" : {
 
+    },
+    "super_rare_card_title" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "スーパーレアカード"
+          }
+        }
+      }
     },
     "text_sample_title" : {
       "extractionState" : "extracted_with_value",
@@ -60,19 +105,10 @@
         }
       }
     },
-    "TextRenderer" : {
-
-    },
     "x: %lf" : {
 
     },
     "y: %lf" : {
-
-    },
-    "ホログラムエフェクト" : {
-
-    },
-    "レアカードエフェクト" : {
 
     }
   },

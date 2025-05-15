@@ -57,7 +57,7 @@ struct MotionHologramEffectView: View {
                 .visualEffect { effect, proxy in
                     effect
                         .colorEffect(
-                            ShaderLibrary.hologramMotionColor(
+                            ShaderLibrary.superRareCard(
                                 .float2(proxy.size),
                                 .float(espelodeTime),
                                 .float2(x, y)
