@@ -21,7 +21,7 @@ struct GradientTextRendere: TextRenderer {
             for run in line {
                 var copy = context
                 copy.addFilter(
-                    .colorShader(ShaderLibrary.default.fillGradientColor(
+                    .colorShader(ShaderLibrary.fillGradientColor(
                         .float2(run.typographicBounds.rect.size),
                         .float(xOffset)
                     ))

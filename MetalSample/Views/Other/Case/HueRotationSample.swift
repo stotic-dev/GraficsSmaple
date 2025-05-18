@@ -16,7 +16,7 @@ struct HueRotationSample: View {
             Rectangle()
                 .frame(width: 300, height: 300)
                 .colorEffect(
-                    ShaderLibrary.hueRotationShader(.float(offset))
+                    ShaderLibrary.hueRotationColor(.float(offset))
                 )
         }
         .padding(.horizontal, 24)
