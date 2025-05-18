@@ -1,5 +1,5 @@
 //
-//  TextRendererHomeView.swift
+//  GradientTextEffectView.swift
 //  MetalSample
 //
 //  Created by 佐藤汰一 on 2025/04/27.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TextRendererHomeView: View {
+struct GradientTextEffectView: View {
     @State var xOffset: Double = 0
     var body: some View {
         ZStack {
@@ -30,5 +30,5 @@ struct TextRendererHomeView: View {
 }
 
 #Preview {
-    TextRendererHomeView()
+    GradientTextEffectView()
 }

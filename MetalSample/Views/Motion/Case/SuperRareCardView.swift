@@ -1,18 +1,18 @@
 //
-//  MotionEffectCardView.swift
+//  SuperRareCardView.swift
 //  MetalSample
 //
-//  Created by 佐藤汰一 on 2025/04/27.
+//  Created by 佐藤汰一 on 2025/04/29.
 //
 
 import CoreMotion
 import SwiftUI
 
-struct MotionEffectCardView: View {
-    
+struct SuperRareCardView: View {
     @State private var motionManager = CMMotionManager()
-    @State private var x: Double = 0
-    @State private var y: Double = 0
+    @State var x: Double = 0
+    @State var y: Double = 0
+    let start = Date.now
     
     var body: some View {
         VStack {
@@ -20,24 +20,7 @@ struct MotionEffectCardView: View {
             Slider(value: $y, in: -1...1)
             Text("x: \(x)")
             Text("y: \(y)")
-            let x = x
-            let y = y
-            Image(.imageIcon)
-                .resizable()
-                .frame(width: 300, height: 300)
-                .aspectRatio(contentMode: .fill)
-                .visualEffect { effect, proxy in
-                    effect.colorEffect(
-                        ShaderLibrary.brightnessMotionColor(
-                            .float2(proxy.size.width, proxy.size.height),
-                            .float2(x, y)
-                        )
-                    )
-                }
-                .colorEffect(ShaderLibrary.default.brightnessMotionColor(
-                    .boundingRect,
-                    .float2(x, y)
-                ))
+            hologramImage()
         }
         .padding(.horizontal, 24)
         .onAppear {
@@ -60,8 +43,34 @@ struct MotionEffectCardView: View {
             motionManager.stopAccelerometerUpdates()
         }
     }
+    
+    @ViewBuilder
+    func hologramImage() -> some View {
+        let x = x
+        let y = y
+        TimelineView(.animation) { context in
+            let espelodeTime = start.timeIntervalSince(context.date)
+            Image(.teaIcon)
+                .resizable()
+                .frame(width: 300, height: 300)
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .visualEffect { effect, proxy in
+                    effect
+                        .colorEffect(
+                            ShaderLibrary.superRareCard(
+                                .float2(proxy.size),
+                                .float(espelodeTime),
+                                .float2(x, y)
+                            )
+                        )
+                }
+        }
+    }
 }
 
 #Preview {
-    MotionEffectCardView()
+    ZStack {
+        Color.black
+        SuperRareCardView()
+    }
 }
