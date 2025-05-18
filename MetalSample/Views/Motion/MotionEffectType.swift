@@ -16,10 +16,10 @@ enum MotionEffectType {
     
     static let rareCard = EffectContentModel(
         title: String(localized: "rare_card_title", defaultValue: "レアカード"),
-        destination: { MotionEffectCardView() }
+        destination: { RareCardView() }
     )
     static let superRareCard = EffectContentModel(
         title: String(localized: "super_rare_card_title", defaultValue: "スーパーレアカード"),
-        destination: { MotionHologramEffectView() }
+        destination: { SuperRareCardView() }
     )
 }
